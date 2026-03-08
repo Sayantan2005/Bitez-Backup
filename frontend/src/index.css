@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+*{
+  /* ya scroll */
+  scrollbar-width: none; /*firefox*/
+  -ms-overflow-style: none; /*IE/Edge purane versions*/
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar {
+  display: none; /*Chrome , Safari*/
+}
+
+.lobster {
+  font-family: 'Lobster', cursive;
+  font-weight: 400;
+}
+
