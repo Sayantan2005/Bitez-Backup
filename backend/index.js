@@ -38,7 +38,7 @@ const server = http.createServer(app)
 // Create Socket.IO server and attach it to HTTP server
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:5173", // frontend URL
+        origin: "https://bitez-backup.onrender.com", // frontend URL
         credentials: true,               // allow cookies
         methods: ['POST', 'GET']         // allowed methods
     }
@@ -59,7 +59,7 @@ app.use(express.json())
 
 // Enable CORS for Express APIs
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://bitez-backup.onrender.com",
     credentials: true
 }))
 
