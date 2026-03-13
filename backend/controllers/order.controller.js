@@ -950,8 +950,12 @@ export const getTodayDeliveries = async (req, res) => {
     const deliveryBoyId = req.userId;
 
     // Create a date object for today's start time (00:00:00)
-    const startsOfDay = new Date();
-    startsOfDay.setHours(0, 0, 0, 0);
+    // const startsOfDay = new Date();
+    // startsOfDay.setHours(0, 0, 0, 0);
+
+    const nowIST = new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" });
+const startsOfDay = new Date(nowIST);
+startsOfDay.setHours(0,0,0,0);
 
     // Find all orders where:
     // - This delivery boy was assigned
