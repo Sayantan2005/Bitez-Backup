@@ -997,7 +997,14 @@ export const getTodayDeliveries = async (req, res) => {
     todaysDeliveries.forEach(shopOrder => {
 
       // Extract hour from deliveredAt time
-      const hour = new Date(shopOrder.deliveredAt).getHours();
+      // const hour = new Date(shopOrder.deliveredAt).getHours();
+      const hour = parseInt(
+  new Date(shopOrder.deliveredAt).toLocaleString("en-IN", {
+    timeZone: "Asia/Kolkata",
+    hour: "2-digit",
+    hour12: false
+  })
+);
 // Increase count for that hour
 
 // stats[hour] → checks if this hour already exists in the object
